@@ -1,153 +1,335 @@
-*{
-    padding: 0;
+/* Resetando estilos padrão */
+* {
     margin: 0;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
     padding: 0;
-    width: 70%; 
+    box-sizing: border-box;
 }
 
-nav ul li {
-    /* Itens do menu */
-    padding: 10px 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: purple;
-}
-
-.container {
+html, body {
+    font-family: Arial, sans-serif;
+    background-color: #E5F9F9;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: rgb(58, 58, 58);
+    box-shadow: 0 4px 2px -2px gray;
     align-items: center;
-    justify-content: center;
-    background-color: #d3fef7;
-    padding: 20px;
-    height: 100vh;
 }
 
-.white-box{
-    background-color: white;
-    padding: 20px;
-    margin: 0;
-    border-radius: 10px;
+.header .logo img {
+    max-width: 200px;
 }
 
-.items{
-    display: flex;
-    justify-content: space-between;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px;
-}
-
-.item {
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.product {
-    text-align: center;
-    background-color: #E9EEf2;
-    height: 220px;
-    width: 100%;
-    border-radius: 5px;
-}
-
-.product.sale .sell{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background-color: red;
-    color: white;
-    padding: 5px;
-    font-size: 0.9rem;
+.header .autenticacao a {
+    margin-left: 15px;
+    color: #ffffff;
+    text-decoration: none;
     font-weight: bold;
 }
 
-.item img{
-    margin-top: 10px;
-    height: 90%;
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(123, 224, 255);
+    padding: 10px 0;
+    box-shadow: 0 4px 2px -2px gray;
 }
 
-.item h3 {
-    margin: 0;
-    color: #444;
-    font-size: 1.2rem;
-    margin: 10px 0px 10px 0px;
+.navbar a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
 }
 
-.item span{
-    color: #777;
-    font-size: 1rem;
-    margin-bottom: 10px;
+/* Conteúdo principal */
+.conteudo_principal {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    flex: 1;
 }
 
-.item button {
-    background-color: #262524;
-    color: white;
-    border: none;
+/* Sidebar */
+.sidebar {
+    width: 20%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.sidebar h3 {
+    color: #333;
+}
+
+.produtos {
+    width: 75%;
+}
+
+.pesquisa {
+    margin-bottom: 20px;
+}
+
+.pesquisa input {
+    width: 100%;
     padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.grade_produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px;
+}
+
+.caixa_produto {
+    width: 200px;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.caixa_produto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.caixa_produto h4 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.caixa_produto p {
+    color: #777;
+    font-size: 16px;
+}
+
+.caixa_produto .promocao {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.caixa_produto button {
+    background-color: #8A4FFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
 }
 
-@media (max-width: 680px){
-    .items {
-        display: block;
-    }
-    .item {
-        margin-bottom: 20px;
-    }
-    .container {
-        height: auto;
-    }
+.caixa_produto button:hover {
+    background-color: #6F32C1;
 }
 
-.cadastro {
-    width: 300px;
+/* Página de login */
+.container_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    padding-top: 50px;
+}
+
+.caixa_login{
+    background-color: #ffffff;
     padding: 20px;
-    margin: auto;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: 400px;
 }
 
-.cadastro h3{
+.login h3{
     text-align: center;
-    color: #333;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
-.faleconosco {
-    width: 300px;
-    padding: 20px;
-    margin: auto;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+.botao_login {
+    text-align: center;
 }
 
-.faleconosco h3{
+.botao_login input[type="submit"]{
+    background-color: rgb(123, 224, 255);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botao_login input[type="submit"]:hover {
+    background-color: rgb(0, 195, 255);
+}
+
+/* Página de cadastro */
+.container_cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    padding-top: 50px;
+}
+
+.caixa_cadastro {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.cadastro h3 {
     text-align: center;
-    color: #333;
+    margin-top: 10px;
     margin-bottom: 20px;
+}
+
+.form-group{
+    margin-bottom: 15px;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.botaocadastro {
+    text-align: center;
+}
+
+.botaocadastro input[type="submit"]{
+    background-color: rgb(123, 224, 255);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botaocadastro input[type="submit"]:hover {
+    background-color: rgb(0, 195, 255);
+}
+
+/* Contato */
+
+.container_contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    padding-top: 50px;
+}
+
+.caixa_contato {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.faleconosco h3 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group{
+    margin-bottom: 15px;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.botaocontato {
+    text-align: center;
+}
+
+.botaocontato input[type="submit"]{
+    background-color: rgb(123, 224, 255);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botaocontato input[type="submit"]:hover {
+    background-color: rgb(0, 195, 255);
+}
+
+/* Rodapé */
+footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -4px 2px -2px gray;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+footer a {
+    color: #8A4FFF;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }

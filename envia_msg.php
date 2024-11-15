@@ -1,8 +1,7 @@
 <?php
-
     include_once("config.inc.php");
 
-    $nome = $_REQUEST['nomes'];
+    $nome = $_REQUEST['nome'];
     $email = $_REQUEST['email'];
     $assunto = $_REQUEST['assunto'];
     $mensagem = $_REQUEST['mensagem'];
@@ -15,9 +14,16 @@
     $query = mysqli_query($conexao,$sql);
 
     if($query){
-        echo "<h2> Mensagem enviada com sucesso.</h2>";
+        echo "<script>
+                alert('Mensagem enviada com sucesso!');
+                window.location.href='index.php?pg=faleconosco';
+              </script>";
     }else{
-        echo "<h2> Não foi possível enviar a mensagem.</h2>";
+        echo "<script>
+                alert('Erro ao enviar mensagem.');
+                window.location.href='index.php?pg=faleconosco';
+              </script>";
     }
 
     mysqli_close($conexao);
+?>
